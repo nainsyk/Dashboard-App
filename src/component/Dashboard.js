@@ -46,12 +46,12 @@ const Dashboard = () => {
     <div className="bg-blue-50 min-h-screen">
       {/* Navbar */}
       <nav className="flex justify-between items-center bg-white p-2 shadow-md mb-6">
-        <div className="flex px-8 items-center space-x-4">
+        <div className="flex px-4 md:px-8 items-center space-x-2 md:space-x-4">
           <div className="text-gray-500">
             <a href="/" className="text-gray-500 hover:text-gray-700">Home</a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 inline-block mx-2 text-gray-500"
+              className="h-4 w-4 inline-block mx-1 md:mx-2 text-gray-500"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -62,12 +62,12 @@ const Dashboard = () => {
             <span className="text-gray-700 font-semibold">Dashboard V2</span>
           </div>
         </div>
-        <div className="flex items-center mr-20 space-x-4">
+        <div className="flex items-center mr-4 md:mr-20 space-x-2 md:space-x-4">
           <div className="relative">
             <input
               type="text"
               placeholder="Search anything..."
-              className="pl-8 text-sm px-4 py-2 rounded-lg border border-gray-300 bg-blue-50 w-80"
+              className="pl-8 text-sm px-2 md:px-4 py-2 rounded-lg border border-gray-300 bg-blue-50 w-48 md:w-80"
               value={value}
               onChange={handleChangeInput}
             />
@@ -76,7 +76,7 @@ const Dashboard = () => {
             </div>
             <button
               onClick={isSearchActive ? handleClearSearch : handleSearch}
-              className="bg-indigo-600 text-white px-4 py-2 rounded-lg ml-2"
+              className="bg-indigo-600 text-white px-2 md:px-4 py-2 rounded-lg ml-2"
             >
               {isSearchActive ? 'Clear Search' : 'Search'}
             </button>
@@ -85,28 +85,31 @@ const Dashboard = () => {
             <GoChevronDown className="h-6 w-6 text-gray-700" />
           </button>
           <button className="bg-white p-2 rounded-full hover:bg-gray-100">
-            <TbBellRinging className="h-6 w-6 mr-20 text-gray-700" />
+            <TbBellRinging className="h-6 w-6 md:mr-20 text-gray-700" />
           </button>
         </div>
       </nav>
 
       {/* Main Dashboard Content */}
-      <div className="p-6">
-        <header className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">CNAPP Dashboard</h1>
-          <div className="flex items-center space-x-4">
+      <div className="p-4 md:p-6">
+        <header className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold">CNAPP Dashboard</h1>
+          <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
             <button
               onClick={() => handleAddWidget(null)}
               className="bg-white border rounded-md px-3 py-2"
             >
               Add Widget +
             </button>
-            <button className="bg-white border rounded-md px-2 py-2"><FaArrowsRotate />
+            <button className="bg-white border rounded-md px-2 py-2">
+              <FaArrowsRotate />
             </button>
-            <button className="bg-white border rounded-md px-2 py-2"><BsThreeDotsVertical /></button>
+            <button className="bg-white border rounded-md px-2 py-2">
+              <BsThreeDotsVertical />
+            </button>
             <div className="relative">
               <button className="bg-white border border-blue-900 text-blue-900 font-bold px-4 py-2 rounded-md flex items-center">
-                <BiTimeFive className="w-5 h-5 mr-2 text-blue-900"/>
+                <BiTimeFive className="w-5 h-5 mr-2 text-blue-900" />
                 Last 2 days
                 <svg
                   className="w-4 h-4 ml-2"
@@ -128,8 +131,8 @@ const Dashboard = () => {
         {/* Dashboard Content */}
         {categories.map((category) => (
           <div key={category.id} className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">{category.name}</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <h2 className="text-lg md:text-xl font-semibold mb-4">{category.name}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {category.widgets.map((widget) => (
                 <Widget key={widget.id} widget={widget} />
               ))}
@@ -145,8 +148,8 @@ const Dashboard = () => {
 
         {/* Search Results Section */}
         <div className="mt-6">
-          <h2 className="text-xl font-semibold mb-4">Search Results</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <h2 className="text-lg md:text-xl font-semibold mb-4">Search Results</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {availableWidgets.length > 0 ? (
               availableWidgets.map((widget) => (
                 <Widget key={widget.id} widget={widget} />
