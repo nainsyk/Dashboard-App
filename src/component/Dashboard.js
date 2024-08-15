@@ -67,12 +67,12 @@ const Dashboard = () => {
             <input
               type="text"
               placeholder="Search anything..."
-              className="pl-12 text-sm px-2 md:px-4 py-2 rounded-lg border border-gray-300 bg-blue-50 w-full md:w-80"
+              className="text-sm px-2 md:px-8 py-2 rounded-lg border border-gray-300 bg-blue-50 w-full md:w-80"
               value={value}
               onChange={handleChangeInput}
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
-              <HiOutlineMagnifyingGlass className="w-5 h-7 mr-4 text-gray-400" />
+              <HiOutlineMagnifyingGlass className="w-5 h-7 text-gray-400" />
             </div>
             <button
               onClick={isSearchActive ? handleClearSearch : handleSearch}
