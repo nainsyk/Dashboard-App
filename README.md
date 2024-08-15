@@ -23,10 +23,10 @@ A dynamic dashboard application built using React, Tailwind CSS, and Redux Toolk
 -Initial State: Contains categories with widgets and a search term.
 
 **Reducers** :
-    -**addWidget**: Adds a widget to a specific category.
-    -**removeWidget**: Removes a widget from a specific category.
-    -**setSearchTerm**: Sets the search term used for filtering widgets.
-    -**filterWidgets**: Filters widgets based on the search term and updates availableWidgets.
+    - **addWidget**: Adds a widget to a specific category.
+    - **removeWidget**: Removes a widget from a specific category.
+    - **setSearchTerm**: Sets the search term used for filtering widgets.
+    - **filterWidgets**: Filters widgets based on the search term and updates availableWidgets.
 
 ## Installation
 
