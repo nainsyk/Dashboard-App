@@ -67,7 +67,7 @@ const Dashboard = () => {
             <input
               type="text"
               placeholder="Search anything..."
-              className="pl-8 text-sm px-2 md:px-4 py-2 rounded-lg border border-gray-300 bg-blue-50 w-full md:w-80"
+              className="pl-12 text-sm px-2 md:px-4 py-2 rounded-lg border border-gray-300 bg-blue-50 w-full md:w-80"
               value={value}
               onChange={handleChangeInput}
             />
