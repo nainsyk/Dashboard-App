@@ -45,8 +45,8 @@ const Dashboard = () => {
   return (
     <div className="bg-blue-50 min-h-screen">
       {/* Navbar */}
-      <nav className="flex justify-between items-center bg-white p-2 shadow-md mb-6">
-        <div className="flex px-4 md:px-8 items-center space-x-2 md:space-x-4">
+      <nav className="flex flex-col md:flex-row justify-between items-center bg-white p-2 shadow-md mb-6">
+        <div className="flex flex-col md:flex-row px-4 md:px-8 items-start md:items-center space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto">
           <div className="text-gray-500">
             <a href="/" className="text-gray-500 hover:text-gray-700">Home</a>
             <svg
@@ -62,12 +62,12 @@ const Dashboard = () => {
             <span className="text-gray-700 font-semibold">Dashboard V2</span>
           </div>
         </div>
-        <div className="flex items-center mr-4 md:mr-20 space-x-2 md:space-x-4">
-          <div className="relative">
+        <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto mt-2 md:mt-0">
+          <div className="relative flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0">
             <input
               type="text"
               placeholder="Search anything..."
-              className="pl-8 text-sm px-2 md:px-4 py-2 rounded-lg border border-gray-300 bg-blue-50 w-48 md:w-80"
+              className="pl-8 text-sm px-2 md:px-4 py-2 rounded-lg border border-gray-300 bg-blue-50 w-full md:w-80"
               value={value}
               onChange={handleChangeInput}
             />
@@ -76,17 +76,19 @@ const Dashboard = () => {
             </div>
             <button
               onClick={isSearchActive ? handleClearSearch : handleSearch}
-              className="bg-indigo-600 text-white px-2 md:px-4 py-2 rounded-lg ml-2"
+              className="bg-indigo-600 text-white px-2 md:px-4 py-2 rounded-lg ml-2 w-full md:w-auto"
             >
               {isSearchActive ? 'Clear Search' : 'Search'}
             </button>
           </div>
-          <button className="bg-white p-2 rounded-full hover:bg-gray-100">
-            <GoChevronDown className="h-6 w-6 text-gray-700" />
-          </button>
-          <button className="bg-white p-2 rounded-full hover:bg-gray-100">
-            <TbBellRinging className="h-6 w-6 md:mr-20 text-gray-700" />
-          </button>
+          <div className="flex flex-row items-center justify-between w-full md:w-auto space-x-2">
+            <button className="bg-white p-2 rounded-full hover:bg-gray-100">
+              <GoChevronDown className="h-6 w-6 text-gray-700" />
+            </button>
+            <button className="bg-white p-2 rounded-full hover:bg-gray-100">
+              <TbBellRinging className="h-6 w-6 text-gray-700" />
+            </button>
+          </div>
         </div>
       </nav>
 
