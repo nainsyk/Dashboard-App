@@ -19,8 +19,8 @@ A dynamic dashboard application built using React, Tailwind CSS, and Redux Toolk
 
 ## State Management using "Redux Toolkit"
 
--Redux Slice (widgetSlice.js):
--Initial State: Contains categories with widgets and a search term.
+- **Redux Slice (widgetSlice.js)**:
+- **Initial State**: Contains categories with widgets and a search term.
 
 **Reducers** :
 - **addWidget**: Adds a widget to a specific category.
