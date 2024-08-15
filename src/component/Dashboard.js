@@ -72,7 +72,7 @@ const Dashboard = () => {
               onChange={handleChangeInput}
             />
             <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
-              <HiOutlineMagnifyingGlass className="w-5 h-7 text-gray-400" />
+              <HiOutlineMagnifyingGlass className="w-5 h-7 mr-4 text-gray-400" />
             </div>
             <button
               onClick={isSearchActive ? handleClearSearch : handleSearch}
